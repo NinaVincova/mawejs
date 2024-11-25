@@ -24,27 +24,28 @@ jobs:
     # Uncomment the line below if you want to include the electron-build step
     # - run: npm run electron-build
     - name: Send Discord Notification
-      if: always() # Ensures this step runs regardless of success or failure
+      if: always() # Runs regardless of the job's success or failure
       run: |
+        apt-get update && apt-get install -y jq # Ensure jq is available
         curl -X POST -H "Content-Type: application/json" \
-        -d '{
-          "username": "GitHub Actions",
-          "avatar_url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
-          "embeds": [{
-            "title": "Build Notification",
-            "description": "The job has **${{ job.status }}** for branch `${{ github.ref_name }}`.",
-            "color": "${{ job.status == 'success' && 3066993 || 15158332 }}",
-            "fields": [
-              {
-                "name": "Repository",
-                "value": "${{ github.repository }}"
-              },
-              {
-                "name": "Event",
-                "value": "${{ github.event_name }}"
-              }
+        -d "$(jq -n --arg status "${{ job.status }}" \
+                     --arg branch "${{ github.ref_name }}" \
+                     --arg repo "${{ github.repository }}" \
+                     --arg event "${{ github.event_name }}" \
+                     --arg timestamp "$(date -u +"%Y-%m-%dT%H:%M:%SZ")" \
+        '{
+          username: "GitHub Actions",
+          avatar_url: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+          embeds: [{
+            title: "Build Notification",
+            description: "The job has **\($status)** for branch `\($branch)`.",
+            color: ($status == "success" ? 3066993 : 15158332),
+            fields: [
+              {name: "Repository", value: $repo},
+              {name: "Event", value: $event}
             ],
-            "timestamp": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+            timestamp: $timestamp
           }]
-        }' \
+        }')" \
         https://discord.com/api/webhooks/1310623401638887526/sNNe8i_2j9pu3uG-7UNnPGshWRLkakupS4ENTFDMklyhAYzV6m_Ni6yi8o_ql2kvE5ya
+      shell: bash
