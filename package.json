@@ -17,8 +17,10 @@
     "react-start": "react-scripts start",
     "react-build": "react-scripts build",
     "react-test": "react-scripts test",
+    "test:coverage": "jest --coverage",
     "react-eject": "react-scripts eject",
-    "fresh": "rm -rf dist build node_modules package-lock.json && npm install"
+    "fresh": "rm -rf dist build node_modules package-lock.json && npm install",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -40,6 +42,7 @@
     "nanoid": "^5.0.8",
     "notistack": "^3.0.1",
     "pako": "^2.1.0",
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-infinite-scroll-component": "^6.1.0",
@@ -53,12 +56,23 @@
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/eslint-parser": "^7.25.9",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^29.7.0",
     "concurrently": "^9.0.1",
     "cross-env": "^7.0.3",
     "electron": "^33.0.2",
     "electron-builder": "^25.1.8",
     "electron-reload": "^2.0.0-alpha.1",
+    "eslint": "^8.57.1",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-react": "^7.37.2",
+    "globals": "^15.12.0",
+    "jest": "^27.5.1",
     "nodemon": "^3.1.7",
     "react-scripts": "^5.0.1",
     "wait-on": "^8.0.1"
@@ -79,6 +93,20 @@
     ],
     "development": [
       "last 1 chrome version"
+    ]
+  },
+  "jest": {
+    "testMatch": [
+      "**/test/**/*.test.js",
+      "**/test/**/*.spec.js",
+      "**/test_*.js"
+    ],
+    "coverageDirectory": "coverage",
+    "testEnvironment": "node"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
     ]
   }
 }
