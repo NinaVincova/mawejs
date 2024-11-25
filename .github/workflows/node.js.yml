@@ -22,11 +22,6 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm run electron-build
-    - name: Save Build Artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: built-app
-        path: dist/
     - name: Send Discord Notification
       run: |
         if [[ "${{ job.status }}" == "success" ]]; then
@@ -57,19 +52,6 @@ jobs:
           }]
         }')" \
         https://discord.com/api/webhooks/1310623401638887526/sNNe8i_2j9pu3uG-7UNnPGshWRLkakupS4ENTFDMklyhAYzV6m_Ni6yi8o_ql2kvE5ya
-    - name: Send Built App to Discord
-      run: |
-        # Find the built app file
-        file=$(find ./dist -name "*.AppImage" -o -name "*.exe" -o -name "*.dmg")
-        
-        # Send the file to Discord
-        curl -F "payload_json={
-            \"username\": \"GitHub Actions\",
-            \"avatar_url\": \"https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png\",
-            \"content\": \"The latest build is ready for download: **${{ github.ref_name }}**\"
-          }" \
-          -F "file=@$file" \
-          https://discord.com/api/webhooks/1310623401638887526/sNNe8i_2j9pu3uG-7UNnPGshWRLkakupS4ENTFDMklyhAYzV6m_Ni6yi8o_ql2kvE5ya
     - name: Audit Dependencies
       run: npm audit --production
 
