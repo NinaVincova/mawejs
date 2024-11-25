@@ -19,7 +19,8 @@
     "react-test": "react-scripts test",
     "test:coverage": "jest --coverage",
     "react-eject": "react-scripts eject",
-    "fresh": "rm -rf dist build node_modules package-lock.json && npm install"
+    "fresh": "rm -rf dist build node_modules package-lock.json && npm install",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
