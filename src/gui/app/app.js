@@ -385,7 +385,7 @@ class FileMenu extends React.PureComponent {
 
     return <PopupState variant="popover" popupId="file-menu">
       {(popupState) => <React.Fragment>
-        <Button tooltip="File menu" {...bindTrigger(popupState)}>{text ?? <Icon.Menu />}</Button>
+        <Button data-testid="file-menu-button" tooltip="File menu" {...bindTrigger(popupState)}>{text ?? <Icon.Menu />}</Button>
         <Menu {...bindMenu(popupState)}>
           <MenuItem onClick={e => { cmdNewFile({ setCommand }); popupState.close(e); }}>
             <ListItemText>New</ListItemText>
