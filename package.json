@@ -52,7 +52,7 @@
     "slate-react": "^0.111.0",
     "stream": "^0.0.3",
     "use-immer": "^0.10.0",
-    "uuid": "^11.0.2",
+    "uuid": "^11.0.3",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
