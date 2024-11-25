@@ -21,6 +21,8 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
+    - name: Run WebDriverIO Tests
+      run: npx wdio run wdio.conf.js
     - run: npm run electron-build
     - name: Send Discord Notification
       run: |
