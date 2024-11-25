@@ -26,5 +26,5 @@ jobs:
     - run: npm run build --if-present
     - name: Set GH_TOKEN for electron-build
       env:
-        GH_TOKEN: ${{ secrets.ESS }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: npm run electron-build
