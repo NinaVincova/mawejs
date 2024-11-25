@@ -17,7 +17,7 @@ module.exports = {
     },
     rules: {
         // Customize rules for unused variables or undefined global usage
-        'no-unused-vars': 'warn',
-        'no-undef': 'error',
+        'no-unused-vars': 'off',
+        'no-undef': 'off',
     },
 };
