@@ -20,7 +20,10 @@ describe("ImportView component", () => {
         const importButton = screen.getByText("Import");
         fireEvent.click(importButton);
 
+<<<<<<< HEAD
         // test
+=======
+>>>>>>> 3893bf21fd1367bda1398168e9eb20ced593d218
         expect(mockUpdateDoc).toHaveBeenCalled();
         expect(mockSetBuffer).toHaveBeenCalledWith(undefined);
     });
