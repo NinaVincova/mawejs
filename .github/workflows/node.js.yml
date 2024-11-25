@@ -1,10 +1,6 @@
 name: Node.js CI
 
 on:
-  push:
-    branches:
-      - "master"
-      - "issue-fix"
   pull_request:
     branches:
       - "master"
