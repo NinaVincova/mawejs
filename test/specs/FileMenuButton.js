@@ -5,7 +5,7 @@ import { expect } from 'chai';
 describe('File menu button functionality', () => {
     it('should open the File menu when the button is clicked', async () => {
         // Otvorenie aplikácie
-        await browser.url('http://localhost:3000'); // Nahraďte správnou URL vašej aplikácie
+        await browser.url('http://localhost:3000');
 
         // Nájdeme tlačidlo File menu
         const fileMenuButton = await $('button[aria-label="File menu"]'); // Pridajte správny selektor

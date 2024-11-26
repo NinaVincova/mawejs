@@ -1,0 +1,55 @@
+<story uuid="13d5ca3b-660d-4142-a5d9-8bb1731e7581" format="mawe" version="4">
+<!--/
+===============================================================================
+
+STORY: undefined
+
+===============================================================================
+/-->
+<head/>
+<export type="short" acts="none" chapters="numbered" scenes="none"/>
+<!--/
+===============================================================================
+/-->
+<body>
+<act name="###">
+<chapter name="###">
+<scene name="* * *">
+<p>mkoskim</p>
+<p>/</p>
+<comment>mawejscccccccccccsddddffdfdfdfdfddf</comment>
+</scene>
+</chapter>
+</act>
+</body>
+<!--/
+===============================================================================
+
+NOTES
+
+===============================================================================
+/-->
+<notes>
+<act name="">
+<chapter name="">
+<scene name="">
+<br/>
+</scene>
+</chapter>
+</act>
+</notes>
+<!--/
+===============================================================================
+/-->
+<ui>
+<view/>
+<arc elements="scene" template="beatsheet" mode="topCCW"/>
+<editor>
+<body words="numbers" indexed="act,chapter,scene,synopsis"/>
+</editor>
+</ui>
+<history>
+<words date="2024-11-24" text="2" missing="0" chars="14"/>
+<words date="2024-11-25" text="1" missing="0" chars="8"/>
+</history>
+</story>

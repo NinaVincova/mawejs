@@ -1,0 +1,60 @@
+<story uuid="c3a5074a-ad9f-4015-8dad-f95643049839" format="mawe" version="4">
+<!--/
+===============================================================================
+
+STORY: undefined
+
+===============================================================================
+/-->
+<head/>
+<export type="short" acts="none" chapters="numbered" scenes="none"/>
+<!--/
+===============================================================================
+/-->
+<body>
+<act name="###">
+<chapter name="">
+<scene name="">
+<p>Dnes je ge dhjcvhcjkjfdjk</p>
+<p>nhdhdhdnhsdshjbsd</p>
+<p>sdjbnsdjcbdcdjhjdhd</p>
+<p>aaaaaa</p>
+<p>isdjcidsidcdjdcc</p>
+<br/>
+<p>dddd</p>
+<br/>
+</scene>
+</chapter>
+</act>
+</body>
+<!--/
+===============================================================================
+
+NOTES
+
+===============================================================================
+/-->
+<notes>
+<act name="">
+<chapter name="">
+<scene name="">
+<br/>
+</scene>
+</chapter>
+</act>
+</notes>
+<!--/
+===============================================================================
+/-->
+<ui>
+<view/>
+<arc elements="scene" template="beatsheet" mode="topCCW"/>
+<editor>
+<body words="numbers" indexed="act,chapter,scene,synopsis"/>
+</editor>
+</ui>
+<history>
+<words date="2024-11-24" text="71" missing="0" chars="503"/>
+<words date="2024-11-25" text="9" missing="0" chars="87"/>
+</history>
+</story>
