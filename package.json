@@ -20,7 +20,9 @@
     "test:coverage": "jest --coverage",
     "react-eject": "react-scripts eject",
     "fresh": "rm -rf dist build node_modules package-lock.json && npm install",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "wdio": "wdio run ./wdio.conf.js",
+    "start": "node --inspect-brk server.js"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -52,17 +54,25 @@
     "slate-react": "^0.111.0",
     "stream": "^0.0.3",
     "use-immer": "^0.10.0",
-    "uuid": "^11.0.2",
+    "uuid": "^11.0.3",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/eslint-parser": "^7.25.9",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/plugin-transform-runtime": "^7.25.9",
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-react": "^7.25.9",
+    "@babel/preset-typescript": "^7.26.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@wdio/cli": "^9.3.1",
+    "@wdio/local-runner": "^9.3.1",
+    "@wdio/mocha-framework": "^9.2.8",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^29.7.0",
+    "chai": "^5.1.2",
     "concurrently": "^9.0.1",
     "cross-env": "^7.0.3",
     "electron": "^33.0.2",
@@ -73,9 +83,13 @@
     "eslint-plugin-react": "^7.37.2",
     "globals": "^15.12.0",
     "jest": "^27.5.1",
+    "jest-react-native": "^18.0.0",
+    "nock": "^13.5.6",
     "nodemon": "^3.1.7",
+    "react-native": "^0.76.3",
     "react-scripts": "^5.0.1",
-    "wait-on": "^8.0.1"
+    "wait-on": "^8.0.1",
+    "wdio-electron-service": "^7.3.1"
   },
   "build": {
     "extraResources": [
@@ -93,20 +107,6 @@
     ],
     "development": [
       "last 1 chrome version"
-    ]
-  },
-  "jest": {
-    "testMatch": [
-      "**/test/**/*.test.js",
-      "**/test/**/*.spec.js",
-      "**/test_*.js"
-    ],
-    "coverageDirectory": "coverage",
-    "testEnvironment": "node"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
     ]
   }
 }

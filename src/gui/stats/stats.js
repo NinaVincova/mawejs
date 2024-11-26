@@ -39,7 +39,7 @@ import { createDateStamp } from "../../document/util"
 //
 //*****************************************************************************
 
-export function Stats({doc, updateDoc}) {
+export function Stats({ doc, updateDoc }) {
 
   const today = createDateStamp()
 
@@ -48,9 +48,9 @@ export function Stats({doc, updateDoc}) {
     .filter(e => e.type === "words")
     .filter(e => e.date !== today)
     .sort((a, b) => a.date - b.date)
-    .concat([{date: today, ...doc.body.words}])
+    .concat([{ date: today, ...doc.body.words }])
 
-  return <HistoryChart history={history}/>
+  return <HistoryChart history={history} />
   /*
   return <HBox style={{overflow: "auto"}}>
     <HistoryChart history={history}/>
@@ -60,19 +60,19 @@ export function Stats({doc, updateDoc}) {
 
 //-----------------------------------------------------------------------------
 
-function HistoryChart({history}) {
+function HistoryChart({ history }) {
 
   //console.log("History:", history);
 
   return <ResponsiveContainer width="90%" height="80%">
     <BarChart data={history}>
       {/* <CartesianGrid strokeDasharray="3 3" /> */}
-      <XAxis dataKey="date"/>
+      <XAxis dataKey="date" />
       <YAxis />
       <Tooltip />
-      <Bar dataKey="text" stackId="total" fill="green" isAnimationActive={false}/>
-      <Bar dataKey="missing" stackId="total" fill="red" isAnimationActive={false}/>
+      <Bar dataKey="text" stackId="total" fill="green" isAnimationActive={false} />
+      <Bar dataKey="missing" stackId="total" fill="red" isAnimationActive={false} />
     </BarChart>
   </ResponsiveContainer>
-
+  // test
 }

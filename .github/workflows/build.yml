@@ -1,4 +1,4 @@
-name: Build and Package Electron App
+name: Build & Test Desktop App
 
 on:
   push:
@@ -10,25 +10,22 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: windows-latest  # or use macos-latest or ubuntu-latest depending on your app
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v2
       with:
         node-version: '16'
 
     - name: Install dependencies
       run: npm install
 
-    - name: Build the app
-      run: npm run build
+    - name: Run tests
+      run: npm test
 
-    - name: Package the app
-      run: npm run package
+    - name: Build app
+      run: npm run build
